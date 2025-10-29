@@ -1,9 +1,11 @@
-If you haven’t signed up yet, now’s the time to jump in. Whether you're reimagining ADM workflows or crafting client-facing Agentic AI business use cases, this is your chance to showcase innovation, collaboration, and impact.
+docker volume create n8n_data
 
-Here are the top three things you need to know:
-
-Two tracks: internal ADM workflow transformation and Agentic AI business use case development
-
-Work with cutting-edge Gen AI tools
-
-Submissions must be well-documented and show clear integration of Agentic AI
+docker run -it --rm \
+ --name n8n \
+ -p 5678:5678 \
+ -e GENERIC_TIMEZONE="<YOUR_TIMEZONE>" \
+ -e TZ="<YOUR_TIMEZONE>" \
+ -e N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true \
+ -e N8N_RUNNERS_ENABLED=true \
+ -v n8n_data:/home/node/.n8n \
+ docker.n8n.io/n8nio/n8n
